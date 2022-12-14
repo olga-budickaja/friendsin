@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/friendsin/static/css/main.073c9b0a.css",
+    "main.js": "/friendsin/static/js/main.186b03de.js",
+    "static/js/787.d7c7d573.chunk.js": "/friendsin/static/js/787.d7c7d573.chunk.js",
+    "static/media/logo.svg": "/friendsin/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
+    "index.html": "/friendsin/index.html",
+    "main.073c9b0a.css.map": "/friendsin/static/css/main.073c9b0a.css.map",
+    "main.186b03de.js.map": "/friendsin/static/js/main.186b03de.js.map",
+    "787.d7c7d573.chunk.js.map": "/friendsin/static/js/787.d7c7d573.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.073c9b0a.css",
+    "static/js/main.186b03de.js"
+  ]
+}
