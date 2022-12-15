@@ -1,0 +1,10 @@
+@import "../../../styles/Root.module";
+.description {
+  padding-left: 10px;
+  text-align: left;
+  &__subtitle {
+    font-size: 0.4em;
+    font-weight: 200;
+    color: var(--light-blue);
+  }
+}

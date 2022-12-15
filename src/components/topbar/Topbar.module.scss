@@ -1,0 +1,18 @@
+@import "../../styles/Root.module";
+.topbar {
+  &Relative {
+    position: relative;
+  }
+  &__color {
+    background: var(--color-blue);
+  }
+  &__icon {
+    font-size: large;
+    &Favorite {
+      position: absolute;
+      top: 5px;
+      right: 5px;
+      font-size: x-small;
+    }
+  }
+}

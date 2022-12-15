@@ -1,0 +1,11 @@
+.logo {
+  margin-right: 20px;
+  &__relative {
+    position: relative;
+  }
+  &__absolute {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+  }
+}
