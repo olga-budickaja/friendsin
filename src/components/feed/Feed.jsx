@@ -55,7 +55,10 @@ const Feed = () => {
             postAvatar: avatar10,
             altAvatar: 'Katrin Pink',
             userNik: 'KatrinPink',
-            date: '21 Dec.2022',
+            date: '5 min ago',
+            tag: 'its my tag',
+            like: 23,
+            comments: 9,
             postImg: img4,
             altImg: 'Puppy',
             body: 'This impressive paella is a perfect party dish and a fun meal to cook together with your guests. Add 1 cup of frozen peas along with the mussels, if you like.',
@@ -66,7 +69,9 @@ const Feed = () => {
             postAvatar: avatar2,
             altAvatar: 'Vanessa Muller',
             userNik: 'vanessa_kat',
-            date: '19 Dec.2022',
+            date: '1 hour ago',
+            like: 5,
+            comments: 1,
             postImg: img1,
             altImg: 'Puppy',
             body: 'This impressive paella is a perfect party dish and a fun meal to cook together with your guests. Add 1 cup of frozen peas along with the mussels, if you like.',
@@ -77,7 +82,10 @@ const Feed = () => {
             postAvatar: avatar3,
             altAvatar: 'Mak Vuers',
             userNik: 'mak22',
-            date: '20 Dec.2022',
+            date: '2 day ago',
+            tag: 'I add some tag',
+            like: 13,
+            comments: 0,
             postImg: img3,
             altImg: 'Puppy',
             body: 'This impressive paella is a perfect party dish and a fun meal to cook together with your guests. Add 1 cup of frozen peas along with the mussels, if you like.',
@@ -88,8 +96,11 @@ const Feed = () => {
             postAvatar: avatar4,
             altAvatar: 'Luchija Mendales',
             userNik: 'lusichka',
-            date: '22 Dec.2022',
-            postImg: img4,
+            date: '15 min ago',
+            tag: 'and I add some tag',
+            like: 10,
+            comments: 3,
+            postImg: img5,
             altImg: 'Puppy',
             body: 'This impressive paella is a perfect party dish and a fun meal to cook together with your guests. Add 1 cup of frozen peas along with the mussels, if you like.',
             bodyCollapse: 'Heat oil in a (14- to 16-inch) paella pan or a large, deep skillet over medium-high heat. Add chicken, shrimp and chorizo, and cook, stirring occasionally until lightly browned, 6 to 8 minutes. Transfer shrimp to a large plate and set aside, leaving chicken and chorizo in the pan. Add pimentón, bay leaves, garlic, tomatoes, onion, salt and pepper, and cook, stirring often until thickened and fragrant, about 10 minutes. Add saffron broth and remaining 4 1/2 cups chicken broth; bring to a boil.',
@@ -195,7 +206,7 @@ const Feed = () => {
                 >
                     <Card className={cl.feed__users}>
                         <CardHeader
-                            subheader="Some Name`s friends"
+                            subheader="Followed friends"
                         />
                         <Divider/>
                         <CardContent>

@@ -5,7 +5,6 @@ import {AddOutlined} from "@mui/icons-material";
 import {red} from "@mui/material/colors";
 
 const CreatePostButtonList = (buttons) => {
-
     const ColorButton = styled(Fab)(({ theme }) => ({
         color: '#ffffff',
         backgroundColor: red[600],
@@ -19,6 +18,10 @@ const CreatePostButtonList = (buttons) => {
         borderRadius: '100%'
     }));
 
+    const addNewPost = () => {
+
+    }
+
     return (
         <List sx={{display: 'flex', flexWrap: 'wrap'}}>
             {buttons.buttons.map(btn =>
@@ -26,7 +29,10 @@ const CreatePostButtonList = (buttons) => {
             )}
 
             <ListItemButton>
-                <ColorButton style={{ marginLeft: 'auto' }}>
+                <ColorButton
+                    style={{ marginLeft: 'auto' }}
+                    onClick={addNewPost}
+                >
                     <AddOutlined />
                 </ColorButton>
             </ListItemButton>

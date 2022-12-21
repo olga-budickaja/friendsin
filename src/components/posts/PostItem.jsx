@@ -14,7 +14,6 @@ import {
 import IconButton from "@mui/material/IconButton";
 import MoreVertIcon from "@mui/icons-material/MoreVert";
 import {FavoriteOutlined} from "@mui/icons-material";
-import ShareIcon from "@mui/icons-material/Share";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 
 const ExpandMore = styled((props) => {
@@ -49,6 +48,13 @@ const PostItem = (props) => {
                 title={props.props.userNik}
                 subheader={props.props.date}
             />
+            <Typography
+                sx={{ padding: '0 20px 10px 20px', fontWeight: 500 }}
+                variant="body1"
+                color="text.secondary"
+            >
+                {props.props.tag}
+            </Typography>
             <CardMedia
                 component="img"
                 image={props.props.postImg}
@@ -64,9 +70,19 @@ const PostItem = (props) => {
                 <IconButton aria-label="add to favorites">
                     <FavoriteOutlined/>
                 </IconButton>
-                <IconButton aria-label="share">
-                    <ShareIcon />
-                </IconButton>
+                <Typography
+                    variant="body2"
+                    color="text.secondary"
+                >
+                    {`${props.props.like} people like it`}
+                </Typography>
+                <Typography
+                    sx={{ marginLeft: 'auto', borderBottom: '1px dashed grey', cursor: 'pointer' }}
+                    variant="body2"
+                    color="text.secondary"
+                >
+                    {`${props.props.comments} comments`}
+                </Typography>
                 <ExpandMore
                     expand={expanded}
                     onClick={handleExpandClick}
