@@ -1,0 +1,17 @@
+@import "../../styles/Root.module";
+
+.panelNav {
+  padding: 0 40px;
+  &__active {
+    color: var(--light-blue) !important;
+  }
+  &__btn {
+    padding: 10px 0;
+    margin-right: 20px;
+  }
+  &__search {
+    color: var(--color-blue);
+    padding: 20px 0;
+    background: var(--light-blue-2);
+  }
+}

@@ -1,0 +1,43 @@
+.promo {
+  max-width: 100%;
+  &__wrapper {
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  &__card {
+    margin: 0 auto;
+    &Content {
+      text-align: center;
+    }
+    &Avatar {
+      margin: 0 auto;
+    }
+    &Description {
+      margin-top: 20px;
+    }
+    &Title {
+      text-align: center;
+      font-size: 1.2em;
+      font-weight: 600;
+    }
+    &Counter {
+      margin-top: 10px;
+      &Block {
+        text-align: center;
+        padding: 5px 20px;
+      }
+      &Block:not(:last-child) {
+        border-right: 1px solid var(--light-grey);
+      }
+    }
+    &Subtitle {
+      font-size: 1em;
+      font-weight: 600;
+    }
+  }
+}
+.relative {
+  position: relative;
+}

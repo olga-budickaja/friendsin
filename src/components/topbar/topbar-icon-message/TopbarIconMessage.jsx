@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {Avatar, Badge, Box, IconButton, Menu, MenuItem, Typography} from "@mui/material";
 import {MailOutline, NotificationsNone} from "@mui/icons-material";
 import avatar from '../../../assets/img/users/user1.jpg';
@@ -6,8 +6,8 @@ import MoreIcon from '@mui/icons-material/MoreVert';
 import cl from "./TopbarIconMessage.module.scss";
 
 const TopbarIconMessage = () => {
-    const [anchorEl, setAnchorEl] = React.useState(null);
-    const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
+    const [anchorEl, setAnchorEl] = useState(null);
+    const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = useState(null);
 
     const isMenuOpen = Boolean(anchorEl);
     const isMobileMenuOpen = Boolean(mobileMoreAnchorEl);

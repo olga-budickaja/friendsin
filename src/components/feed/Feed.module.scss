@@ -1,0 +1,16 @@
+.feed {
+  width: 80%;
+  padding: 0 20px;
+  &__avatar {
+    margin-right: 20px;
+  }
+  &__btn {
+    margin-left: 20px;
+  }
+  &__posts {
+    margin: 20px 0;
+  }
+  &__users {
+    margin-top: 20px;
+  }
+}

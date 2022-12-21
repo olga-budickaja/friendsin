@@ -1,0 +1,17 @@
+@import "../../styles/Root.module";
+
+.sidebar {
+  width: 10%;
+  &__nav {
+    margin-left: auto;
+    width: 80px;
+    border-radius: 8px;
+    background-color: var(--color-blue);
+    min-height: calc(100vh - 104px);
+    max-height: calc(100vh - 104px);
+    color: #ffffff;
+  }
+  &__item {
+    margin: 30px 0;
+  }
+}

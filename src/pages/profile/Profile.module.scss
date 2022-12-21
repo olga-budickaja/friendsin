@@ -1,0 +1,16 @@
+@import "../../styles/Root.module";
+
+.profile {
+  max-width: 100%;
+  margin: 0 20px;
+  color: var(--color-text);
+  &__borderRadius {
+    border-radius: 8px;
+  }
+  &__relative {
+    position: relative;
+  }
+  &__contentMyProfile {
+    margin-top: 140px;
+  }
+}

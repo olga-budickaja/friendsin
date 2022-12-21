@@ -1,0 +1,17 @@
+@import "../../styles/Root.module";
+
+.rightbar {
+  display: flex;
+  flex-direction: column;
+  width: 10%;
+  &__nav {
+    border-radius: 8px;
+    background-color: #ffffff;
+    width: 80px;
+    min-height: calc(100vh - 104px);
+    color: #ffffff;
+  }
+  &__item {
+    margin: 30px 0;
+  }
+}

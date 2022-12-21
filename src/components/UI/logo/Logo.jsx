@@ -6,7 +6,7 @@ import {ChatBubbleOutline, Favorite} from "@mui/icons-material";
 const Logo = () => {
     return (
         <Typography
-            variant="h6"
+            variant="h5"
             noWrap
             component="div"
             sx={{ display: { xs: 'none', sm: 'block' } }}

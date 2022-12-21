@@ -2,8 +2,8 @@ import React from 'react';
 import {AppBar, Box, Toolbar} from "@mui/material";
 import Logo from "../UI/logo/Logo";
 import MySearch from "../UI/search/MySearch";
-import TopbarIconMenu from "../UI/topbar-icon-menu/TopbarIconMenu";
-import TopbarIconMessage from "../UI/topbar-icon-message/TopbarIconMessage";
+import TopbarIconMenu from "./topbar-icon-menu/TopbarIconMenu";
+import TopbarIconMessage from "./topbar-icon-message/TopbarIconMessage";
 import cl from './Topbar.module.scss';
 
 const Topbar = () => {
