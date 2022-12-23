@@ -1,5 +1,5 @@
 import React from 'react';
-import cl from './Logo.module.scss'
+import cl from './Logo.module.scss';
 import {Typography} from "@mui/material";
 import {ChatBubbleOutline, Favorite} from "@mui/icons-material";
 
