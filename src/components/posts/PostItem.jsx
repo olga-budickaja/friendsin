@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import cl from "./posts.module.scss";
 import {
     Avatar,
@@ -15,6 +15,7 @@ import IconButton from "@mui/material/IconButton";
 import MoreVertIcon from "@mui/icons-material/MoreVert";
 import {FavoriteOutlined} from "@mui/icons-material";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
+import {Users} from "../../usersData";
 
 const ExpandMore = styled((props) => {
     const { expand, ...other } = props;
@@ -28,8 +29,20 @@ const ExpandMore = styled((props) => {
 }));
 
 const PostItem = (props) => {
-    console.log(props)
     const [expanded, setExpanded] = React.useState(false);
+
+    const [like, setLike] = useState(props.props.likes);
+    const [dislike, setDislike] = useState(false);
+    const colorRed = '#d32f2f';
+    const colorGrey = '#455a64'
+
+    const [color, setColor] = useState('')
+
+    const likeHandler = () => {
+        setLike(dislike ? like - 1 : like + 1);
+        setColor(dislike ? colorGrey : colorRed)
+        setDislike(!dislike);
+    }
 
     const handleExpandClick = () => {
         setExpanded(!expanded);
@@ -38,14 +51,14 @@ const PostItem = (props) => {
         <Card className={cl.post}>
             <CardHeader
                 avatar = {
-                    <Avatar src={props.props.postAvatar} alt={props.props.altAvatar} />
+                    <Avatar src={Users.filter(u => u.id === props.props.userId)[0].avatar} alt={props.props.altAvatar} />
                 }
                 action = {
                     <IconButton aria-label="settings">
                         <MoreVertIcon/>
                     </IconButton>
                 }
-                title={props.props.userNik}
+                title={Users.filter(u => u.id === props.props.userId)[0].username}
                 subheader={props.props.date}
             />
             <Typography
@@ -63,18 +76,22 @@ const PostItem = (props) => {
             />
             <CardContent>
                 <Typography variant="body2" color="text.secondary">
-                    {props.props.body}
+                    {`${props.props?.body.slice(0, 69)}...`}
                 </Typography>
+
             </CardContent>
             <CardActions disableSpacing>
-                <IconButton aria-label="add to favorites">
-                    <FavoriteOutlined/>
+                <IconButton
+                    onClick={likeHandler}
+                    aria-label="add to favorites"
+                >
+                    <FavoriteOutlined sx={{ fill: `${color}` }}/>
                 </IconButton>
                 <Typography
                     variant="body2"
                     color="text.secondary"
                 >
-                    {`${props.props.like} people like it`}
+                    {`${like} people like it`}
                 </Typography>
                 <Typography
                     sx={{ marginLeft: 'auto', borderBottom: '1px dashed grey', cursor: 'pointer' }}
@@ -95,7 +112,7 @@ const PostItem = (props) => {
             <Collapse in={expanded} timeout="auto" unmountOnExit>
                 <CardContent>
                     <Typography paragraph>
-                        {props.props.bodyCollapse}
+                        {props.props?.body}
                     </Typography>
                 </CardContent>
             </Collapse>

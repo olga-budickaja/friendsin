@@ -1,11 +1,11 @@
 import React from 'react';
-
 import PostItem from "./PostItem";
+import {Posts} from "../../usersData";
 
-const PostList = (posts) => {
+const PostList = () => {
     return (
         <>
-            {posts.posts.map(post =>
+            {Posts.map(post =>
                 <PostItem props={post} key={post.id} />
             )}
         </>

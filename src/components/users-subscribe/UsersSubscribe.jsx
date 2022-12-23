@@ -2,17 +2,15 @@ import React from 'react';
 import {List} from "@mui/material";
 import cl from './UsersSubscribe.module.scss';
 import UserSubscribeItem from "./UserSubscribeItem";
+import {Users} from "../../usersData";
 
 const UsersSubscribe = () => {
 
     return (
         <List className={cl.users}>
-            <UserSubscribeItem/>
-            <UserSubscribeItem/>
-            <UserSubscribeItem/>
-            <UserSubscribeItem/>
-            <UserSubscribeItem/>
-            <UserSubscribeItem/>
+            {Users.map(user =>
+                <UserSubscribeItem user={user} key={user.id} />
+            )}
         </List>
     );
 };

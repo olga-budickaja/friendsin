@@ -4,7 +4,7 @@
   width: 10%;
   &__nav {
     margin-left: auto;
-    width: 80px;
+    max-width: 80px;
     border-radius: 8px;
     background-color: var(--color-blue);
     min-height: calc(100vh - 104px);
