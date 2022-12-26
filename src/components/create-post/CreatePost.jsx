@@ -11,7 +11,7 @@ import cl from './CreatePost.module.scss';
 import {CollectionsOutlined, LabelOutlined, LocationOnOutlined} from "@mui/icons-material";
 import CreatePostButtonList from "./CreatePostButtonList";
 
-const CreatePost = (props) => {
+const CreatePost = () => {
     const [buttons, setButtons] = useState([
         {
             id: 'jbgsgl',
@@ -33,8 +33,6 @@ const CreatePost = (props) => {
         },
     ]);
 
-    const [body, setBody] = useState('sdfsadga');
-
     return (
         <Card className={cl.create}>
             <CardHeader
@@ -45,15 +43,14 @@ const CreatePost = (props) => {
             />
             <CardContent>
                 <TextField
-                    value={body}
-                    onChange={e => setBody(e.target.value)}
+                    value=""
                     id="outlined-multiline-static"
                     label="Create new post"
                     multiline
                     rows={2}
                     className={cl.create__input}
                 />
-                <CreatePostButtonList buttons={buttons} body={setBody} />
+                <CreatePostButtonList buttons={buttons}/>
             </CardContent>
         </Card>
     );

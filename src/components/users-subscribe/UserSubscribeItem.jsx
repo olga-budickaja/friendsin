@@ -3,7 +3,6 @@ import {Avatar, Button, ListItemButton, styled, Typography} from "@mui/material"
 import cl from "../feed/Feed.module.scss";
 
 const UserSubscribeItem = (props) => {
-    console.log(props)
     const BlueButton = styled(Button)(({ theme }) => ({
         color: '#ffffff',
         backgroundColor: '#188FD9',

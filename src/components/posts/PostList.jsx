@@ -1,13 +1,20 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import PostItem from "./PostItem";
-import {Posts} from "../../usersData";
+import axios from "axios";
 
-const PostList = () => {
+const PostList = ({post}) => {
+    const [user, setUser] = useState({});
+
+    useEffect(() => {
+        const fetchUser = async () => {
+            const res = await axios.get(`users/?userId=${post.userId}`);
+            setUser(res.data)
+        }
+        fetchUser();
+    }, []);
     return (
         <>
-            {Posts.map(post =>
-                <PostItem props={post} key={post.id} />
-            )}
+            <PostItem post={post} user={user}/>
         </>
 
     );

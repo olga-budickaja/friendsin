@@ -5,7 +5,6 @@ import UserSubscribeItem from "./UserSubscribeItem";
 import {Users} from "../../usersData";
 
 const UsersSubscribe = () => {
-
     return (
         <List className={cl.users}>
             {Users.map(user =>

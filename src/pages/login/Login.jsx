@@ -14,6 +14,10 @@ import {
 import Logo from "../../components/UI/logo/Logo";
 
 const Login = () => {
+    const handleClick = (e) => {
+        e.preventDefault();
+        console.log("clicked")
+    }
     const BlueButton = styled(Button)(({ theme }) => ({
         color: '#ffffff',
         backgroundColor: '#188FD9',
@@ -49,16 +53,21 @@ const Login = () => {
                         <div>
                             <Card>
                                 <CardContent>
-                                    <form className={cl.login__form}>
+                                    <form
+                                        onSubmit={handleClick}
+                                        className={cl.login__form}
+                                    >
                                         <TextField
                                             id="outlined-basic"
                                             label="email"
+                                            type="email"
                                             variant="outlined"
                                             fullWidth="100%"
                                         />
                                         <TextField
                                             id="outlined-basic"
                                             label="password"
+                                            type="password"
                                             variant="outlined"
                                             fullWidth="100%"
                                             sx={{ margin: '20px 0' }}
@@ -67,7 +76,7 @@ const Login = () => {
                                         <div>
                                             <BlueButton sx={{ width: '100%', marginBottom: '20px' }}
                                             >
-                                                Success
+                                                Log in
                                             </BlueButton>
                                         </div>
                                         <Link

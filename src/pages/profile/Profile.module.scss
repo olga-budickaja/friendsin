@@ -1,7 +1,7 @@
 @import "../../styles/Root.module";
 
 .profile {
-  max-width: 100%;
+  max-width: 80%;
   margin: 0 20px;
   color: var(--color-text);
   &__borderRadius {
@@ -12,5 +12,8 @@
   }
   &__contentMyProfile {
     margin-top: 140px;
+  }
+  &__feed {
+    margin-top: 20px;
   }
 }

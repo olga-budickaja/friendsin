@@ -18,10 +18,6 @@ const CreatePostButtonList = (buttons) => {
         borderRadius: '100%'
     }));
 
-    const addNewPost = () => {
-
-    }
-
     return (
         <List sx={{display: 'flex', flexWrap: 'wrap'}}>
             {buttons.buttons.map(btn =>
@@ -31,7 +27,6 @@ const CreatePostButtonList = (buttons) => {
             <ListItemButton>
                 <ColorButton
                     style={{ marginLeft: 'auto' }}
-                    onClick={addNewPost}
                 >
                     <AddOutlined />
                 </ColorButton>

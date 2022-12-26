@@ -1,7 +1,7 @@
 import React from 'react';
 import {Box, Typography} from "@mui/material";
 
-const UserInfo = () => {
+const UserInfo = (props) => {
     const bull = (
         <Box
             component="span"
@@ -18,7 +18,7 @@ const UserInfo = () => {
                     sx={{ color: 'grey', marginLeft: '15px' }}
                     component="span"
                 >
-                    New York
+                    {props.props.city}
                 </Typography>
             </Typography>
             <Typography
@@ -31,7 +31,7 @@ const UserInfo = () => {
                     sx={{ color: 'grey', marginLeft: '15px' }}
                     component="span"
                 >
-                    Madrid
+                    {props.props.from}
                 </Typography>
             </Typography>
             <Typography
@@ -44,7 +44,13 @@ const UserInfo = () => {
                     sx={{ color: 'grey', margin: '15px' }}
                     component="span"
                 >
-                    Single
+                    {
+                        props.props.relationship === 1
+                        ? "Single"
+                        : props.props.relationship === 2
+                        ? "Married"
+                        : "-"
+                    }
                 </Typography>
             </Typography>
         </>
