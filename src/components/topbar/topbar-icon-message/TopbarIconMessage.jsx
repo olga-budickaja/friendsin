@@ -1,11 +1,15 @@
-import React, {useState} from 'react';
+import React, {useContext, useState} from 'react';
 import {Avatar, Badge, Box, IconButton, Menu, MenuItem, Typography} from "@mui/material";
 import {MailOutline, NotificationsNone} from "@mui/icons-material";
-import avatar from '../../../assets/img/users/user1.jpg';
 import MoreIcon from '@mui/icons-material/MoreVert';
 import cl from "./TopbarIconMessage.module.scss";
+import {AuthContext} from "../../../context/AuthContext";
+import {Link} from "react-router-dom";
 
 const TopbarIconMessage = () => {
+    const {user} = useContext(AuthContext);
+    const PF = process.env.REACT_APP_PUBLIC_FOLDER;
+
     const [anchorEl, setAnchorEl] = useState(null);
     const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = useState(null);
 
@@ -96,9 +100,9 @@ const TopbarIconMessage = () => {
                     aria-haspopup="true"
                     color="inherit"
                 >
-                    <Avatar src={avatar} alt="Katrin Love"/>
+                    <Avatar sx={{ width: 24, height: 24 }} src={ PF + user.avatar } alt=""/>
                 </IconButton>
-                <p>Katrin Love</p>
+                <p>{ user.username }</p>
             </MenuItem>
         </Menu>
     );
@@ -128,19 +132,22 @@ const TopbarIconMessage = () => {
                     onClick={handleProfileMenuOpen}
                     color="inherit"
                 >
-                    <Avatar src={avatar} alt="Katrin Love"/>
-                    <div className={cl.description}>
-                        <Typography
-                            variant="h6"
-                            noWrap
-                            component="div"
-                            sx={{ display: { xs: 'none', sm: 'block' } }}
-                            style={{lineHeight: 1}}
-                        >
-                            Katrin Love
-                        </Typography>
-                        <div className={cl.description__subtitle}>Active now</div>
-                    </div>
+                    <Link to={`/${user.username}`}>
+                        <Avatar src={ PF + user.avatar } alt="Katrin Love"/>
+                        <div className={cl.description}>
+                            <Typography
+                                variant="h6"
+                                noWrap
+                                component="div"
+                                sx={{ display: { xs: 'none', sm: 'block' } }}
+                                style={{lineHeight: 1}}
+                            >
+                                { user.username }
+                            </Typography>
+                            <div className={cl.description__subtitle}>Active now</div>
+                        </div>
+                    </Link>
+
 
                 </IconButton>
                 {renderMobileMenu}
