@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useContext, useEffect, useState} from 'react';
 import cl from "./posts.module.scss";
 import {
     Avatar,
@@ -17,6 +17,8 @@ import {FavoriteOutlined} from "@mui/icons-material";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import {format} from "timeago.js"
 import {Link} from "react-router-dom";
+import axios from "axios";
+import {AuthContext} from "../../context/AuthContext";
 
 const ExpandMore = styled((props) => {
     const { expand, ...other } = props;
@@ -31,18 +33,27 @@ const ExpandMore = styled((props) => {
 
 const PostItem = (props) => {
     const [expanded, setExpanded] = React.useState(false);
-
     const [likes, setLikes] = useState(props.post.likes.length);
+    const [isLiked, setIsLiked] = useState(false);
     const [dislikes, setDislikes] = useState(false);
     const colorRed = '#d32f2f';
     const colorGrey = '#455a64';
-
     const PF = process.env.REACT_APP_PUBLIC_FOLDER;
-
+    const { user: currentUser } = useContext(AuthContext);
     const [color, setColor] = useState('')
 
-    const likeHandler = () => {
+    useEffect(() => {
+        setIsLiked(props.post.likes.includes(currentUser._id))
+    }, [currentUser._id, props.post.likes]);
+
+    const likeHandler = async () => {
+        try {
+           await axios.put("/posts/" + props.post._id + "/like", {userId: currentUser._id});
+        } catch (e) {
+            console.log(e)
+        }
         setLikes(dislikes ? likes - 1 : likes + 1);
+        setIsLiked(!isLiked);
         setColor(dislikes ? colorGrey : colorRed)
         setDislikes(!dislikes);
     }
@@ -55,7 +66,7 @@ const PostItem = (props) => {
             <Link to={`/${props.user.username}`} className={cl.post__link}>
                 <CardHeader
                     avatar = {
-                        <Avatar src={`${PF}users/${props.user?.avatar}`} alt="" />
+                        <Avatar src={`users/${props.user?.avatar}` ? `${PF}users/${props.user?.avatar}` : ``} alt="" />
                     }
                     action = {
                         <IconButton aria-label="settings">

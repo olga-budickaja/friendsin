@@ -51,7 +51,9 @@ const TopbarIconMessage = () => {
             onClose={handleMenuClose}
         >
             <MenuItem onClick={handleMenuClose}>Profile</MenuItem>
-            <MenuItem onClick={handleMenuClose}>My account</MenuItem>
+            <Link to={`/`}>
+                <MenuItem onClick={handleMenuClose}>Timeline</MenuItem>
+            </Link>
         </Menu>
     );
 
@@ -100,7 +102,7 @@ const TopbarIconMessage = () => {
                     aria-haspopup="true"
                     color="inherit"
                 >
-                    <Avatar sx={{ width: 24, height: 24 }} src={ PF + user.avatar } alt=""/>
+                    <Avatar src={`${PF}/users/${user.avatar}`} alt={user.avatar} />
                 </IconButton>
                 <p>{ user.username }</p>
             </MenuItem>
@@ -123,6 +125,7 @@ const TopbarIconMessage = () => {
                         <NotificationsNone />
                     </Badge>
                 </IconButton>
+                <Link to={`/${user.username}`}>
                 <IconButton
                     size="large"
                     edge="end"
@@ -132,24 +135,21 @@ const TopbarIconMessage = () => {
                     onClick={handleProfileMenuOpen}
                     color="inherit"
                 >
-                    <Link to={`/${user.username}`}>
-                        <Avatar src={ PF + user.avatar } alt="Katrin Love"/>
-                        <div className={cl.description}>
-                            <Typography
-                                variant="h6"
-                                noWrap
-                                component="div"
-                                sx={{ display: { xs: 'none', sm: 'block' } }}
-                                style={{lineHeight: 1}}
-                            >
-                                { user.username }
-                            </Typography>
-                            <div className={cl.description__subtitle}>Active now</div>
-                        </div>
-                    </Link>
-
-
-                </IconButton>
+                    <Avatar src={`${PF}/users/${user.avatar}`} alt=""/>
+                    <div className={cl.description}>
+                        <Typography
+                            variant="h6"
+                            noWrap
+                            component="div"
+                            sx={{ display: { xs: 'none', sm: 'block' } }}
+                            style={{lineHeight: 1}}
+                        >
+                            { user.username }
+                        </Typography>
+                        <div className={cl.description__subtitle}>Active now</div>
+                    </div>
+                    </IconButton>
+                </Link>
                 {renderMobileMenu}
                 {renderMenu}
             </Box>

@@ -11,7 +11,7 @@ const AppRouter = () => {
     const {user} = useContext(AuthContext)
     return (
         <Routes>
-            <Route exact path="/" element={ user ? <HomePage/> : <Register/> } />
+            <Route path="/" element={ user ? <HomePage/> : <Register/> } />
             <Route path="/login" element={ user ? <Navigate replace to={"/"} /> : <Login/> }/>
             <Route path="/register" element={ user ? <Navigate replace to={"/"} /> : <Register/> }/>
             <Route path="/:username" element={<Profile/>}/>
