@@ -1,23 +1,26 @@
 import React from 'react';
 import {CardMedia, Typography} from "@mui/material";
+import {Link} from "react-router-dom";
 
-const UserFriends = ({following}) => {
-    console.log(following)
+const UserFriends = ({friend}) => {
+    const PF = process.env.REACT_APP_PUBLIC_FOLDER;
     return (
         <div>
-            <CardMedia
-                component="img"
-                // image={props.user.avatar}
-                alt="green iguana"
-            />
+            <Link to={`/${friend.username}`}>
+                <CardMedia
+                    component="img"
+                    image={`${PF}users/${friend?.avatar}`}
+                    alt=""
+                />
+            </Link>
             <Typography
-                sx={{ textAlign: 'center', fontSize: '10px' }}
+                sx={{ textAlign: 'center', fontSize: '12px', fontWeight: 600 }}
                 component="div"
             >
-                {/*{props.user.username.length > 10*/}
-                {/*    ? `${props.user.username.slice(0, 13)}...`*/}
-                {/*    : props.user.username*/}
-                {/*}*/}
+                {friend.username.length > 10
+                    ? `${friend.username.slice(0, 13)}...`
+                    : friend.username
+                }
             </Typography>
         </div>
     );
