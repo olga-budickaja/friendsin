@@ -1,5 +1,21 @@
 .create {
+  margin-bottom: 20px;
   &__label {
     display: flex;
+  }
+  &__container {
+    padding: 0 20px 10px 20px;
+    position: relative;
+  }
+  &__img {
+    max-width: 100%;
+    object-fit: cover;
+  }
+  &__cancel {
+    position: absolute;
+    top: 10px;
+    right: 30px;
+    opacity: 0.7;
+    cursor: pointer;
   }
 }

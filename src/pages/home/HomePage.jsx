@@ -46,7 +46,7 @@ const HomePage = () => {
                             sm={12}
                             sx={{padding: '0 8px'}}
                         >
-                            <RightFeed/>
+                            <RightFeed />
                         </Grid>
                     </Grid>
                 </Box>

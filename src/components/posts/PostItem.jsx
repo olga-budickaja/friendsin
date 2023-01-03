@@ -63,10 +63,14 @@ const PostItem = (props) => {
     };
     return (
         <Card className={cl.post}>
-            <Link to={`/${props.user.username}`} className={cl.post__link}>
+            <Link to={`/friendsin/profile/${props.user.username}`} className={cl.post__link}>
                 <CardHeader
                     avatar = {
-                        <Avatar src={`users/${props.user?.avatar}` ? `${PF}users/${props.user?.avatar}` : ``} alt="" />
+                        <Avatar src={props.user?.avatar
+                                ? `${PF}users/${props.user?.avatar}`
+                                : `${PF}no-avatar.png`}
+                                alt={props.user.username}
+                        />
                     }
                     action = {
                         <IconButton aria-label="settings">
@@ -83,7 +87,7 @@ const PostItem = (props) => {
                 variant="body1"
                 color="text.secondary"
             >
-                {props.post.tag}
+                {props.post?.tag}
             </Typography>
             <CardMedia
                 component="img"

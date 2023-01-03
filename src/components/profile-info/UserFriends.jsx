@@ -1,16 +1,20 @@
 import React from 'react';
-import {CardMedia, Typography} from "@mui/material";
+import { CardMedia,  Typography} from "@mui/material";
 import {Link} from "react-router-dom";
 
 const UserFriends = ({friend}) => {
     const PF = process.env.REACT_APP_PUBLIC_FOLDER;
+
     return (
         <div>
-            <Link to={`/${friend.username}`}>
+            <Link to={`/friendsin/profile/${friend.username}`}>
                 <CardMedia
                     component="img"
-                    image={`${PF}users/${friend?.avatar}`}
-                    alt=""
+                    image={ friend?.avatar
+                        ? `${PF}users/${friend?.avatar}`
+                        : `${PF}no-avatar.png`
+                        }
+                    alt={friend?.username}
                 />
             </Link>
             <Typography

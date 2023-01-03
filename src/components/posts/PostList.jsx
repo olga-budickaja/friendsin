@@ -7,14 +7,15 @@ const PostList = ({post}) => {
 
     useEffect(() => {
         const fetchUser = async () => {
-            const res = await axios.get(`users/?userId=${post.userId}`);
+            const res = await axios.get(`/users/?userId=${post.userId}`);
             setUser(res.data)
         }
         fetchUser();
-    }, []);
+    }, [post.userId]);
+
     return (
         <>
-            <PostItem post={post} user={user}/>
+            <PostItem post={post} user={user} key={user._id}/>
         </>
 
     );

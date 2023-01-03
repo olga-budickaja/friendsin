@@ -12,7 +12,7 @@ const LeftFeed = ({user}) => {
     }
     return (
         <>
-            {user ? <ProfilePage/> : <Homepage/>}
+            {user ? <ProfilePage/> : <Homepage />}
         </>
 
     );

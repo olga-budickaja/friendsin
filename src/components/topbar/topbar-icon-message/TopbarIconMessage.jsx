@@ -51,7 +51,7 @@ const TopbarIconMessage = () => {
             onClose={handleMenuClose}
         >
             <MenuItem onClick={handleMenuClose}>Profile</MenuItem>
-            <Link to={`/`}>
+            <Link to={`/friendsin/`}>
                 <MenuItem onClick={handleMenuClose}>Timeline</MenuItem>
             </Link>
         </Menu>
@@ -125,7 +125,7 @@ const TopbarIconMessage = () => {
                         <NotificationsNone />
                     </Badge>
                 </IconButton>
-                <Link to={`/${user.username}`}>
+                <Link to={`/friendsin/profile/${user.username}`}>
                 <IconButton
                     size="large"
                     edge="end"

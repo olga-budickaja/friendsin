@@ -19,11 +19,12 @@ const Profile = () => {
 
     useEffect(() => {
         const fetchUser = async () => {
-            const res = await axios.get(`users/?username=${username}`);
+            const res = await axios.get(`/users/?username=${username}`);
             setUser(res.data)
         }
         fetchUser();
     }, [username]);
+
     return (
         <>
             <Topbar/>
@@ -52,7 +53,7 @@ const Profile = () => {
                                     sm={5}
                                     sx={{padding: '0 8px'}}
                                 >
-                                    <LeftFeed user={user} />
+                                    <LeftFeed user={user}/>
                                 </Grid>
                                 <Grid
                                     item
@@ -61,7 +62,7 @@ const Profile = () => {
                                     sm={7}
                                     sx={{padding: '0 8px'}}
                                 >
-                                    <Feed username={username} />
+                                    <Feed username={username}/>
                                 </Grid>
                                 <Grid
                                     item
@@ -70,7 +71,7 @@ const Profile = () => {
                                     sm={12}
                                     sx={{padding: '0 8px'}}
                                 >
-                                    <RightFeed/>
+                                    <RightFeed />
                                 </Grid>
                             </Grid>
                         </Box>

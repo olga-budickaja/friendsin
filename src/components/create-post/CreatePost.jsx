@@ -7,7 +7,7 @@ import {
     TextField
 } from "@mui/material";
 import cl from './CreatePost.module.scss';
-import {AddOutlined, CollectionsOutlined} from "@mui/icons-material";
+import {AddOutlined, Cancel, CollectionsOutlined} from "@mui/icons-material";
 import {AuthContext} from "../../context/AuthContext";
 import {red} from "@mui/material/colors";
 import axios from "axios";
@@ -94,6 +94,12 @@ const CreatePost = () => {
                 title="Share your impressions..."
             />
             <CardContent>
+                {file && (
+                    <div className={cl.create__container}>
+                        <img className={cl.create__img} src={URL.createObjectURL(file)} alt={file.name}/>
+                        <Cancel className={cl.create__cancel} onClick={() => setFile(null)} />
+                    </div>
+                )}
                 <form onSubmit={submitHandler}>
                     <TextField
                         id="desc"

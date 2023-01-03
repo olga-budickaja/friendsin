@@ -12,8 +12,8 @@ const Feed = ({username}) => {
     useEffect(() => {
         const fetchPosts = async () => {
             const res = username
-                ? await axios.get("posts/profile/" + username)
-                : await axios.get("posts/timeline/" + user._id);
+                ? await axios.get("/posts/profile/" + username)
+                : await axios.get("/posts/timeline/" + user._id);
             setPosts(res.data.sort((p1, p2) => {
                 return new Date(p2.createdAt) - new Date(p1.createdAt)
             }));
@@ -22,9 +22,9 @@ const Feed = ({username}) => {
     }, [username, user._id]);
     return (
         <>
-            <CreatePost />
+            {(username || username === user.username) && <CreatePost/>}
             {posts.map(post =>
-                <PostList post={post} key={post._id} />
+                <PostList post={post} key={post._id}/>
             )}
         </>
     );

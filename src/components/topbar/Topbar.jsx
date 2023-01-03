@@ -12,7 +12,7 @@ const Topbar = () => {
         <Box sx={{ flexGrow: 1 }}>
             <AppBar position="static">
                 <Toolbar className={cl.topbar__color}>
-                    <Link to={'/'}>
+                    <Link to={'/friendsin/'}>
                         <Logo/>
                     </Link>
                     <MySearch/>

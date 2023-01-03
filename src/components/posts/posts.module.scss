@@ -1,5 +1,7 @@
 .post {
-  margin: 20px 0;
+  &:not(:first-child) {
+    margin-top: 20px;
+  }
   &__img {
     max-width: 100%;
   }
