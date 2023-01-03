@@ -23,7 +23,14 @@ mongoose
     .then(() => console.log("Connected to MongoDB"))
     .then(err => console.log(err))
 
+app.use(express.static(path.join(__dirname, 'build')));
+
+app.get('/', function (req, res) {
+    res.sendFile(path.join(__dirname, 'build', 'index.html'));
+});
+
 app.use("/images", express.static(path.join(__dirname, "public/images")));
+
 
 //middleware
 app.use(express.json());
